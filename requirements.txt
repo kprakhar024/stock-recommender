@@ -1,0 +1,36 @@
+# ── Core Data & ML ──────────────────────────────────────────────────────────
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.0
+xgboost==2.1.1
+lightgbm==4.5.0
+yfinance==0.2.40
+ta==0.11.0
+
+# ── Storage (Revision 4: DuckDB + Parquet; PostgreSQL removed) ───────────────
+duckdb>=0.10.0
+pyarrow>=16.0.0       # Parquet read/write backend for pandas
+
+# ── NLP & Sentiment (Revision 3: FinBERT live inference) ────────────────────
+transformers==4.44.2
+torch==2.3.1           # Required by HuggingFace transformers (CPU inference)
+vaderSentiment==3.3.2
+nltk==3.8.1
+feedparser==6.0.11    # Google News RSS parsing (replaces newspaper3k)
+
+# ── Frontend (Revision 6: Streamlit replaces Next.js + FastAPI) ─────────────
+streamlit>=1.37.0
+reportlab>=4.2.0      # 1-page PDF report generation
+
+# ── FastAPI kept as optional lightweight API layer (uvicorn removed) ─────────
+fastapi==0.112.1
+pydantic==2.8.2
+python-multipart==0.0.9
+# uvicorn removed — Streamlit is the primary entry point
+# sqlalchemy removed — DuckDB/Parquet replaces PostgreSQL
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+plotly==5.23.0
+python-dotenv==1.0.1
+requests==2.32.3
+tqdm==4.66.5
